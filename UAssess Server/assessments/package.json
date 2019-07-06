@@ -1,0 +1,20 @@
+{
+  "name": "uassess-assessments-ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app3003.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jsnagaraj-appzoy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "json2csv": "^4.5.1",
+    "mongoose": "^5.3.12",
+    "pdfmake": "^0.1.53",
+    "request": "^2.88.0"
+  }
+}

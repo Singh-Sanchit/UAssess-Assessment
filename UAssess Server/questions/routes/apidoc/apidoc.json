@@ -1,0 +1,8 @@
+{
+    "title": "QUESTIONS Micro Service's API DOC",
+    "url" : "https://api.uassess.com/3002/v1",
+    "template": {
+      "withCompare": true,
+      "withGenerator": true
+    }
+}

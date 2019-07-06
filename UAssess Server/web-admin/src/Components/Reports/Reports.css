@@ -1,0 +1,84 @@
+.tableDiv{
+    padding:2rem;
+}
+table thead{
+    background: lightgray;
+}
+.padding-5rem{
+    padding:5rem;
+}
+.padding-bottom{
+    padding-bottom:3rem;
+}
+.assessment-div{
+    padding-left: 7rem;
+}
+.padding-3rem{
+    padding:3rem;
+}
+.text-red{
+    color: red;
+    padding-left:3rem;
+}
+.white-bg{
+    background: white;
+}
+table.dataTable.no-footer,td {
+    border: 0 !important;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody ,th{
+    border-bottom: 0 !important;
+    text-align: center;
+}
+.reminder-icon{
+    background: #EB6F00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50%;
+    font-size: 2rem !important;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 0.9rem;
+    margin-right: 6rem;
+}
+.pinAssessment-btn{
+    background: #175E86;
+    
+}
+.download-btn{
+    background: #009BFC;
+    /* margin-top: 1.5rem; */
+}
+.reminder-div{
+    text-align: right;
+}
+.reminder-div button{
+    border: none;
+    width: 17rem;
+    margin-top: 1rem;
+}
+.reminder-div h1{
+    cursor: pointer;
+}
+#reportTable{
+    width: 100%;
+}
+
+/* .dataTables_paginate{
+    display: none;
+} */
+@media (max-width: 991px){
+    .tableDiv{
+        padding: 0rem;
+    }
+    .padding-5rem{
+        padding:0rem;
+    }
+    .reminder-div{
+        text-align: center;
+    }
+    .reminder-div h1{
+        margin-left: 6rem;
+        cursor: pointer;
+    }
+}

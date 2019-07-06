@@ -1,0 +1,101 @@
+#profile-navbar{
+    height: 15rem;
+    background-color: #1E7FA7;
+    padding: 2%;
+    margin-right: 0px !important;
+}
+#profile-back{
+    padding:3%;
+    font-size: 30px;
+    color:white;
+    
+}
+#profile-navbar a{
+    color:white;
+}
+#profileImg1{
+    margin-left: 4%;
+}
+#profileImg{
+    margin-left: 4%;
+    width: 8%;
+    height:13%;
+}
+#profileEmail{
+    font-size: 3rem;
+    /* background-color: #1E7FA7; */
+    color: white;
+    margin-left:4%;
+    border:none !important;
+}
+.fa-pencil{
+    color:white;
+    position: absolute;
+    color: white;
+    font-size: 3rem !important;
+    padding: 32px 90px;
+    border: none;
+    cursor: pointer;
+    z-index: 1500;
+}
+.editProfileImage{
+    opacity:0.5;
+    background-color:white;
+}
+#editProfile,#updateProfile{
+    color:white;
+    float: right;
+    /* margin-right: 5%; */
+    font-size: 2rem;
+}
+#profileRow{
+    padding: 2%;
+}
+#profileRow b{
+    font-size: 2rem;
+    color:grey;
+}
+
+@media (max-width: 991px){
+    #profile-navbar{
+        height: 11rem;
+        background-color: #1E7FA7;
+        padding: 3%;
+        margin-right: 0px !important;
+    }
+    #editProfile,#updateProfile{
+        color:white;
+        float: right;
+        font-size: 2rem;
+        margin-top: -4.5rem;
+    }
+    #profile-back{
+        padding:3%;
+        font-size: 2rem;
+        color:white;
+        /* margin-top: -3rem; */
+        
+    }
+    #profileImg {
+        margin-left: 21%;
+        width: 20%;
+        height:23%;
+    }
+    #profileEmail{
+        font-size: 2rem;
+        /* background-color: #1E7FA7; */
+        color: white;
+        margin-left:19%;
+        border:none !important;
+    }
+    .fa-pencil{
+        color:white;
+        position: absolute;
+        color: white;
+        font-size: 2.5rem !important;
+        padding: 22px 90px;
+        border: none;
+        cursor: pointer;
+        z-index: 1500;
+    }
+}

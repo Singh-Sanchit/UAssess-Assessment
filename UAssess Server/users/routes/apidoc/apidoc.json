@@ -1,0 +1,8 @@
+{
+    "title": "USERS MS API DOC",
+    "url" : "https://api.uassess.com/3000/v1",
+    "template": {
+      "withCompare": true,
+      "withGenerator": true
+    }
+}

@@ -1,0 +1,48 @@
+#feedbackContainer{
+    border: 0.2rem solid grey;
+    color: grey;
+    border-radius: 20px;
+    /* padding:3%; */
+    background: white;
+}
+#feedbackWrapper {
+    padding:2%;
+    font-size: 2rem;
+}
+#feedbackWrapper label{
+    margin-top: 1%;
+}
+.feed-back-btn{
+    background-color: #2680aa !important;
+    border: #2680aa !important;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.no-padding-left{
+    padding-left: 0px !important;
+    
+}
+.no-padding-right{
+    padding-right: 1px !important;
+}
+/* #feedbackWrapper h1{ */
+    /* padding:3%; */
+    /* font-size: 2rem; */
+/* } */
+/*  */
+#feedbackContainer input,#feedbackContainer #feedback-message{
+    border-top:0;
+    border-left: 0;
+    border-right: 0;
+    font-size: 2rem;
+
+   
+}
+
+#feedbackContainer form,#feedbackContainer h1{
+    padding:3%;
+}

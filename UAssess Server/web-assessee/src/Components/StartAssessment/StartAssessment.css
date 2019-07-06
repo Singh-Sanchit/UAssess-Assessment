@@ -1,0 +1,122 @@
+#img{
+    /* border-radius: 50%; */
+    /* border:3px solid #75B7CD; */
+    /* padding :10%; */
+    width :90%;
+    height :90%;
+    /*margin-left: 20rem;*/
+}
+#table{
+    padding:5% 5% 5% 5%;
+    font-size: 1.5rem;
+}
+.assessment-header{
+    padding-left: 2%;
+    color: #4E4D67;
+    font-size: 2.5rem;
+    /* margin-top: 3%; */
+    text-align: left;
+}
+.description{
+    font-size: 1.7rem !important;
+    
+}
+#table .column{
+    padding:1%;
+    border-left: 1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
+    /* border: 1px solid #c5c5c5; */
+}
+#table .download-column {
+    border-right: 1px solid #c5c5c5; 
+    
+}
+/* #table .table-header */
+.start-assessement-btn{
+    background: #25D69D;
+    border:#25D69D;
+    margin-bottom: 2rem;  
+}
+.start-assessement{
+    border:1px solid grey;
+    color:grey;
+    border-radius:20px;
+    /* // width:'95% */
+    background:white;
+    /* // paddingLeft:7%; */
+    padding-top:2%;
+}
+.table-header{
+    color:black;
+    background: #DCDCDC;
+    border-top: 1px solid #c5c5c5; 
+    /* margin-right: 0.2rem !important; */
+    margin-left: 0;
+}
+.table-rows .column{
+    min-height: 3.8rem;
+}
+thead{
+    background: lightgray;
+    color: black;
+    border-bottom:0 !important; 
+}
+
+th {
+    text-align: center !important;
+}
+table.dataTable.no-footer,td,th {
+    border: 1px solid #c5c5c5 !important;
+}
+
+@media (max-width: 991px){
+    #img{
+        /* border-radius: 50%;
+        border:2px solid #75B7CD;
+        padding :2%; */
+        width :15%;
+        height :15%;
+        /* font-size:1rem;
+        line-height: 0.3rem;
+        margin-left: 0rem; */
+    }
+    .assessment-header{
+        /* padding-left:2%; */
+        color:#4E4D67;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    #table{       
+        font-size: 1.1rem;
+        padding-right: 0px !important; 
+        padding-left: 0px !important;
+    }
+    .start-assessement-btn{
+        margin-top: 2rem;   
+    }
+    .margin-top{
+        margin-top: 1rem;
+    }
+    .description {
+        font-size: 1.4rem !important;
+        margin-top: 1rem;
+        text-align: justify;
+        margin-left: 1rem;
+        /* text-align: */
+    }
+    .table-header{
+        color:black;
+        background: #DCDCDC;
+        border-top: 1px solid #c5c5c5; 
+        margin-right: 0rem !important;
+    }
+    .table-rows{
+        margin-right: 0 !important;
+        margin-left: 0; 
+    }
+    #reportTable{
+        word-break: break-word;
+    }
+
+}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users Assessment </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.0.66/survey.css" type="text/css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script> 
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+        <style>
+            @font-face {
+                font-family: 'Clearsans Regular';
+                src: url('clearsans_regular.ttf') format('ttf'); 
+            } 
+            *{
+                font-family: 'Clearsans Regular';
+                font-size: 17px;
+            }
+            #result{
+                color: black;
+                width: 100%;                                   
+                padding:3%; 
+                background-color: white;                
+                box-shadow: 0 0 0.8rem grey;                
+            }
+            #divHeader{
+                padding:1%;
+            }
+            table{
+                width:100%;
+            }            
+            td{
+                padding: 1%;
+            }
+        </style>
+        <body>
+            <div class="container" id="surveyResult"></div>
+        </body>
+        <script>
+
+            function onRefresh(){
+                if (window.performance) {
+                console.info("window.performance works fine on this browser");
+                }
+                if (performance.navigation.type == 1) {
+                    console.info( "This page is reloaded" );
+                    window.location.href="http://ec2-35-154-172-174.ap-south-1.compute.amazonaws.com:8080/key";
+                } else {
+                    console.info( "This page is not reloaded");
+                }
+            }
+            
+            
+                                    
+            function displaySummary(data){
+                console.log(data);
+                var jsonData = JSON.parse(data);
+                $("#surveyElement").html("");
+                $("#surveyResult").html("");
+                var avgScore = jsonData.data.avgScore;
+                console.log(jsonData.data.axisScore.skills);
+                
+                var skillsLength=Object.keys(jsonData.data.axisScore.skills).length;  
+                console.log("skillsLength = "+skillsLength);          
+                var skill = jsonData.data.axisScore.skills;
+                console.log("skill = "+skill); 
+                $("#surveyResult").html("<br/>"+
+                        "<div class='alert alert-success text-center'>Thanks for Submission</div>"
+                        +"<div class='container' id='result'>"
+                            +"<div id='avgScoreDiv' class='text-center'>YOUR SCORE : "+avgScore+" </div>"  
+                            +"<div id='summaryDiv'><h3>Summary</h3>"
+                                +"<table><thead><th></th><th></th></thead><tbody id='skillsAndScore'></tbody></table>"
+                            +"</div>"  
+                        +"</div>"               
+                );
+                console.log(data);
+                console.log(jsonData.data.avgScore);
+                var skillsAndScore="";
+                for(i = 0; i < skillsLength; i++){
+                    var label =jsonData.data.axisScore.skills[i].label;
+                    var score =jsonData.data.axisScore.skills[i].score;                    
+                    console.log("label = "+label);
+                    skillsAndScore +="<tr><td>"+label+"</td><td>"+score+"</td></tr>";
+                }
+                
+                $("#skillsAndScore").append(skillsAndScore);
+            }
+            var datas = sessionStorage.getItem("data");
+            displaySummary(datas);
+            onRefresh();
+        </script>
+    </head>
+    </html>

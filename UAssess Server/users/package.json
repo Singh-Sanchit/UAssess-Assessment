@@ -1,0 +1,25 @@
+{
+  "name": "uassess-users-ms",
+  "version": "1.0.0",
+  "description": "This MS used by Assessee, Company Admin and Uassess Admin for registration, login, create company and Invite users as admin or assessee",
+  "main": "app3000.js",
+  "scripts": {
+    "start": "nodemon app300.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "apidoc": "apidoc -i routes/apidoc -o public/apidoc/"
+  },
+  "author": "jsnagaraj-appzoy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "md5": "^2.2.1",
+    "mongoose": "^5.4.3",
+    "nodemailer": "^5.1.1",
+    "nodemon": "^1.19.0",
+    "request": "^2.88.0",
+    "uuid": "^3.3.2",
+    "validator": "^10.11.0"
+  }
+}

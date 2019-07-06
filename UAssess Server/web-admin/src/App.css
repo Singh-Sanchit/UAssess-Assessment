@@ -1,0 +1,291 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.content-wrapper{
+  background: #FBFBFB !important;
+  min-height: 700px !important;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/******************************************** Login Form*************************************/
+.login-container__form-container {
+  background-color: white;
+  border-radius: 0.437rem;
+  text-align: center;
+  line-height: 1.5rem;
+  box-shadow: 0rem 0.1rem 0.3rem grey;
+  padding-left: 3rem;
+  padding-bottom: 2.75rem;
+  padding-right: 3rem;
+  padding-top: 3rem;
+}
+.login-container {
+  position: fixed;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #ececec;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+.login-container__form-status{
+  color: red;
+}
+/* ********************************************************************************************* */
+
+#getTestDiv{
+  /* top:20%; */
+  border-radius: 5px;
+  color:grey;
+  /* font-size: 20px; */
+}
+#getTestDiv h1{
+  font-size: 50px;
+}
+input :hover{
+  border: none;
+}
+#partitioned {
+  padding-left: 15px;
+  letter-spacing: 42px;
+  border: 0;
+  background-image: linear-gradient(to left, grey 70%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 52px 1px;
+  background-repeat: repeat-x;
+  background-position-x: 35px;
+  width: 330px;
+  min-width:330px;
+}
+#partitioned:focus{
+  outline: none;
+}
+#okBtn{
+  width: 100px;
+}
+#divInner{
+  left: 0;
+  position: sticky;
+}
+
+#divOuter{
+  width:295px; 
+  overflow:hidden;
+  margin-left: 25%;
+  margin-top: 10%;
+}
+.modal-footer{
+  display: flex;
+  justify-content: center;
+}
+.fa-chevron-right{
+  text-shadow: 1px 1px 1px grey;
+}
+#header{
+  font-size: 50px;
+}
+
+/* .navbar-header{
+  justify-items: center;
+  align-items: center;
+  display: flex;
+}
+.main-header .navbar-custom-menu, .main-header .navbar-right {
+
+  float: right;
+
+} */
+.fa-bell,.fa-life-ring,.fa-search{
+  font-size: 15px;
+}
+#btnSubmit{
+  background-color: #4dabfd !important;
+  /*box-shadow: 0 0 0.25rem black;*/
+  color: white;
+  font-size: 2rem;
+}
+.fa-star{
+  color:#FF6565;
+}
+#fa-user{
+  color: #95C885;
+}
+.fa-outdent{
+  color:#E8C436;
+  color:rgb(10, 105, 143)
+}
+
+/* Header CSS */
+.navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 29px;
+}
+.navbar-static-top{
+  height: 53px;
+}
+.main-header .navbar {
+  transition: margin-left .3s ease-in-out;
+  margin-bottom: 0;
+  /* margin-left: 230px; */
+  border: none;
+  height: 53px;
+  border-radius: 0;
+}
+.margin-right{
+  margin-right: 1rem;
+}
+.vertical-border{
+  border-left: 0.04rem solid rgb(228, 225, 225);
+  height: 26px;
+  /* font-size: 1rem; */
+  margin-top: 1.1rem;
+  margin-right: 4rem;
+}
+
+aside{
+  font-size: 17px;
+}
+/* Common Css */
+.activeMenu{
+  border-left: 3px solid white;
+}
+
+.padding-rem-3{
+  padding:3rem;
+}
+
+.padding-rem-1{
+  padding:1rem;
+}
+.dispaly-flex1{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.dislpay-flex{
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  border: 0.06rem solid red;
+}
+.content-wrapper{
+  min-height: 570px;
+}
+.fa-exclamation-triangle{
+  font-size: 7rem !important;
+  color:grey;
+}
+.row {
+    margin-right: 1rem;
+    margin-left: 0;
+}
+#uassessLogoHeader{
+    height:30px;
+    margin-top: 1rem;
+    margin-right:30px;
+}
+
+/*********************** Header alignment for responsive screen **************************/
+@media (max-width: 991px){
+  .navbar-static-top{
+      background: blue;
+  }
+  .navbar-custom-menu .navbar-nav>li {
+      line-height: 20px;
+      margin-right: 0;
+  }
+  .vertical-border{
+      border-left: 0.04rem solid rgb(228, 225, 225);
+      height: 20px;
+      margin-top: -35px;
+      margin-right: 4rem;
+  }
+  .navbar-custom-menu .navbar-nav>li>a {
+      padding-bottom: 15px;
+      line-height: 20px;
+      margin-top: -50px;
+  }
+  #uassessLogoHeader{
+      height:40px;
+      padding-bottom:15px;
+      margin-right:0px;
+      margin-top: -6rem;
+  }
+  #assessment1,#assessment2{
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 2rem;
+      width: 27rem;
+      height: 3rem;
+      margin-left: -16px !important;
+  }
+  #divOuter{
+      width:195px; 
+      overflow:hidden;
+      margin-left: 15%;
+      margin-top: 10%;
+  }
+  #partitioned {
+      letter-spacing: 27px;
+      /* border: 0; */
+      background-image: linear-gradient(to left, grey 70%, rgba(255, 255, 255, 0) 0%);
+      background-position: bottom;
+      background-size: 32px 1px;
+      background-repeat: repeat-x;
+      background-position-x: 32px;
+      width: 330px;
+      min-width:330px;
+  }
+  
+  
+
+}
+
+

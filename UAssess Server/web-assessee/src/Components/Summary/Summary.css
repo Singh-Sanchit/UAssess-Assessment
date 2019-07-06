@@ -1,0 +1,135 @@
+#viewReport, #seeMore{
+    color:#25D69D;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.summaryDiv ,#description{
+    font-size: 25px;
+}
+.summaryDiv .column{
+    padding:3% 0 0 2%;   
+}
+#summaryAssDetails{
+    padding-left:2%; 
+}
+
+#description{
+    color:rgba(37, 36, 36, 0.863);
+}
+.seeMore { width:100%; text-align:center; border-bottom: 1px solid rgba(190, 187, 187, 0.863); line-height:0.1em; margin:10px 0 20px; } 
+.seeMore span { background:#fff; padding:0 10px; }
+.block {
+    /* border: 1px solid red; */
+    text-align: center;
+    vertical-align: middle;
+}
+.circle-score {
+    /* background: red; */
+    border:3px solid #29ABE1;
+    border-radius: 50%;
+    /* color: white; */
+    height: 170px;
+    font-weight: bold;
+    width: 170px;
+    display: table;
+    margin: 20px auto;
+}
+.circle-score h3 {
+    vertical-align: middle;
+    padding-top:27%;
+    /* display: table-cell; */
+}
+.circle-score h4{
+    font-size:3rem;
+    /* width: 170px; */
+}
+.padding-right-1rem{
+    padding-right: 1rem;
+}
+.thanks-success{
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}  
+.no-margin{
+   
+    margin-top: 0px; 
+    margin-bottom: 0px;
+    
+}
+.summary-padding-bottom{
+    padding-bottom:2rem;
+}
+.grey-border-radius{
+    box-shadow: 0rem 0.1rem 0.3rem grey;
+    /* border:2px solid grey; */
+    border-radius:1rem;
+}
+.no-margin{
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+}
+.padding-summary{
+    padding:2rem;
+}
+
+.white-bg{
+    background-color: white;
+}
+.round-border{
+    border-radius:50%;
+    /* width:20rem; */
+    height: 15rem; 
+
+    border: 3px solid rgb(10, 105, 143);
+}
+
+
+@media (max-width: 991px){
+    .circle-score {
+        border:2px solid #29ABE1;
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+        display: table;
+        margin-left: 9rem;
+        padding-right: 0px !important; 
+        padding-left: 0px !important;
+    }
+    .circle-score h3 {
+        vertical-align: middle;
+        padding-top:15%;
+        font-size:1.3rem;
+    }
+    .circle-score h4{
+        font-size:2rem;
+        /* width: 120px; */
+        margin-top:-7px !important;
+    }
+    .no-margin{
+        margin-right: 0rem !important;
+        margin-left: 0rem !important;
+    }
+    .summary-title{
+        font-size: 2rem;
+    }
+    #viewReport, #seeMore{
+        color:#25D69D;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .text-font-size h3{
+        font-size:1.5rem !important;
+    }
+    .text-font-size h4{
+        font-size:1.3rem !important;
+    }
+    .skills-score{
+        text-align: right;
+        margin-top: -2.5rem;
+    }
+    .skills-label{
+        text-align: left;
+    }
+
+}

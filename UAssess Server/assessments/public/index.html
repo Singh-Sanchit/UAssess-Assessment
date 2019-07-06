@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users Assessment </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
+        <link href="https://surveyjs.azureedge.net/1.0.66/survey.css" type="text/css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script> 
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+        <style>
+            @font-face {
+                font-family: 'Clearsans Regular';
+                src: url('clearsans_regular.ttf') format('ttf'); 
+            } 
+
+
+                *{
+                    font-family: 'Clearsans Regular';
+                    font-size: 17px;
+                }
+ 
+            /**{
+                background-color: #fff;
+                font-family: 'Clearsans Regular';
+                font-size: 17px;
+            }*/
+            .sv_container{
+                background-color: #fff;  
+                margin:0px; 
+            }
+            .sv_main {
+                width: 100%;
+                /* font-family: "Clearsans Regular"; */
+                /* font-size: 17px; */
+                margin-left: 3%;
+            }
+            .sv_main .sv_container .sv_body .sv_p_root .sv_q {
+                box-sizing: border-box;
+                overflow: auto;
+            }
+            .sv_main .sv_container .sv_header h3{
+                text-align: center;                
+                /*font-size: 20px;*/
+                 font-weight: bold; 
+            }   
+            .sv_main .sv_container .sv_header {
+                padding: 0em;
+            }         
+            .sv_main .sv_body{
+                border:none;
+            }
+            .sv_main.sv_default_css .sv_body {
+                border-color:#fff;
+                background: #fff;
+            }
+            .sv_nav{
+                color:#fff; 
+            }
+            .container{
+                margin-top: 0px;
+            }
+            .sq-title {
+                font-weight: bold;   
+                /* margin-left:-13px;    */
+            } 
+            /* .sq-title span{
+                position: fixed;
+            }             */
+            .sq-label > input {               
+                display: none;
+            }
+            .sq-label {                                             
+                border: 1px solid #9CADC2;
+                border-radius: 5px;
+                text-align: center;                                
+                cursor: pointer;
+                padding-top: 7px;
+                /*padding-bottom: 2px; */
+                width:100%; 
+                height: 40px;   
+                                                                
+            }
+            .sv_qstn .sv-q-col-1 {
+                width: 100%;
+                display: inline-block;                
+                box-sizing: border-box;
+                word-break: break-word;
+                height: 49px;
+            }                      
+            .sq-item.sv-q-col-1.checked .sq-label{
+                background: #25D69D;                
+            }                  
+            #surveyElement{
+                height: 100%;
+            }
+            .sv_main .sv_container .sv_body .sv_nav .sv_complete_btn{  
+                color: #25D69D;
+                background: #fff;
+                border: 1px solid #25D69D;
+                /* margin-right: 35%;  */
+                height: 40db;
+                /* font-size: 17px;  */
+                border-radius: 5px;                
+            }
+            .sv_main .sv_container .sv_body .sv_nav{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .sv_main .sv_container .sv_body {
+                padding: 1em 1em 0em 1em;
+            }
+            .sv_main.sv_default_css .sv_p_root > .sv_row {
+                border-color:white;
+            }
+            div#sq_100.sv_q.sv_qstn{
+                border: none;
+            }
+            /* .sq-root .sq-item{
+                height: 5px;
+            } */
+            .sv_main .sv_container .qno{  
+                /* font-size: 18px;     */
+                margin-left: 90%;                 
+                color: #9CADC2;                       
+            } 
+            /* .sv_nav_header{
+                margin-left:5%;
+            }             */
+            .glyphicon-chevron-left{
+                color:#25D69D;
+                cursor: pointer;
+                border: none;
+                /* font-size:17px; */
+                float:left;
+            }
+            .glyphicon-chevron-right{
+                color:#25D69D;
+                cursor: pointer;
+                border: none;
+                /* margin-left: 60%; */
+                /* font-size:17px; */
+                float: right; 
+            }  
+            .sv_qstn{
+                margin-top: -25px;
+            }
+            .glyphicon {
+                position: relative;
+                top: 0px;
+                display: inline-block;
+                font-family: 'Glyphicons Halflings';
+                font-style: normal;
+                font-weight: 00;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+      
+            .alert-danger{                
+                width:100%;
+                position: absolute;
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%, -50%); 
+            } 
+            #result{
+                color: black;
+                width: 100%;                                   
+                padding:3%; 
+                background-color: white;                
+                box-shadow: 0 0 0.8rem grey;                
+            }
+            #divHeader{
+                padding:1%;
+            }
+            table{
+                width:100%;
+            }            
+            td{
+                padding: 1%;
+            }
+            
+                   
+        </style>               
+    </head>
+    <body>
+        <div class="container" id="surveyElement"><img width="100" height="100" style="position: absolute;top: 50%;left: 50%;margin: -50px 0px 0px -50px;" id="loading-image" src="images/loading.gif" /></div>
+        <div class="container" id="surveyResult"></div>
+        <div class="container" id="surveyNext"></div>          
+        <script> 
+            var getUrl = "http://ec2-35-154-172-174.ap-south-1.compute.amazonaws.com:3003/api/get-web-assessment";
+            var submitUrl = "http://ec2-35-154-172-174.ap-south-1.compute.amazonaws.com:3003/api/submit-assessment-one-question";                                              
+                      
+            var next_load = "";
+            var tokenUrl = getUrlVars()["token"];          
+            var licenseKeyUrl =getUrlVars()["licenseKey"]; 
+            var questionIdUrl = getUrlVars()["questionId"];
+            var noOfQuestions = getUrlVars()["noOfQuestions"];
+           
+            
+            var arr = {"token":tokenUrl,"licenseKey":licenseKeyUrl,"questionId":questionIdUrl};//,"questionId":questionIdUrl
+            getData();
+            function getData(dataSubmit,prevdata){                 
+                
+                if(status()==="0"){
+                    errorMsg = "Check Your Internet Connection";
+                    $("#surveyElement").html("");
+                    $("#surveyElement").html("<div class='alert alert-danger text-center connectionMsg'><h3>Check Your Internet Connection</h3><br/><a style='float:left;' onclick='sendErrorResponse(errorMsg);'>Go Back</a><button style='float:right;' onclick='location.reload(true);'>Try again</button><br/><br/></div>");   
+                } else{  
+                    if(dataSubmit===undefined){  
+                        $.ajax({
+                            url: getUrl,
+                            data: JSON.stringify(arr),                    
+                            type: 'POST', 
+                            contentType: "application/json",                                      
+                            dataType:"json",               
+                            success: function (data ) {
+                                if(JSON.stringify(data.code).indexOf('0') > -1 ){
+                                    $("#surveyResult").html('');                       
+                                    next_load = data;                                        
+                                    useNextLoad(); // dont use the value till the ajax promise resolves here                                           
+                                }else{
+                                    $("#surveyElement").html("");
+                                    errorMsg = JSON.stringify(data.message);
+                                    $("#surveyElement").html("<div class='alert alert-danger text-center'><h1>"+JSON.stringify(data.message).replace (/"/g,'')+"</h1><a style='float:left;' onclick='sendErrorResponse(errorMsg);'>Go Back</a></div>");
+                                }
+                            },
+                            error:function (request, status, error) {
+                                $("#surveyElement").html("");                                 
+                                $("#surveyElement").html('<div class="container" style="color:red;"><img style="position:absolute;top:50%;left:50%;margin:-50px 0px 0px -50px;" id="loading-image" width="100" height="100" src="images/loading.gif" /></div>');
+                                setTimeout(function() {
+                                    errorMsg="Server Unreachable";
+                                    $("#surveyElement").html("");  
+                                    $("#surveyElement").html("<div class='alert alert-danger connectionMsg text-center'><h3>Server Unreachable</h3><br/><a style='float:left;' onclick='sendErrorResponse(errorMsg);'>Go Back</a><button style='float:right;' onclick='location.reload(true);'>Try again</button></div>");
+                                }, 3000);                                                                        
+                            },
+                        });
+                    }
+                  
+                    else{
+                        next_load=dataSubmit;
+                        $("#surveyResult").html('');
+                        useNextLoad();                    
+                    }
+                }
+            }            
+
+            function useNextLoad(){
+                if(next_load!==""){
+                    title = JSON.stringify(next_load.data.title).replace (/"/g,'');
+                    questionId = JSON.stringify(next_load.data.id).replace (/"/g,'');
+                    
+                    var options = [];
+                    optionLen=Object.keys(next_load.data.options).length;            
+                    option = JSON.stringify(next_load.data.options);
+                    for(i = 0; i < optionLen; i++){
+                        var label =JSON.stringify(next_load.data.options[i].label).replace (/"/g,'');
+                        var id =JSON.stringify(next_load.data.options[i].id).replace (/"/g,'');    
+                        if(next_load.data.selectedAnswer){
+                            selectedans= JSON.stringify(next_load.data.selectedAnswer).replace (/"/g,'');   
+                        }  
+
+                        options.push({text:label,value:id});   
+                    }
+                    selectedans="";
+                    if(next_load.data.selectedAnswer){
+                        selectedans= JSON.stringify(next_load.data.selectedAnswer).replace (/"/g,'');   
+                        $(".sq-root").change(function(){
+                            $('.'+selectedans).removeClass('checked');
+                            $('.sq-item').removeClass(selectedans);
+                        }); 
+                    }                                              
+                    var qno ="";
+                    var comp="NEXT";
+                    if(JSON.stringify(next_load.data.qno)){
+                        qno = JSON.stringify(next_load.data.qno).replace (/"/g,'');
+                        qno == noOfQuestions ? comp="SUBMIT" : comp="NEXT";
+                    }else{
+                        qno=" ";
+                    }
+                    json = {
+                        questionTitleTemplate: "{title}",
+                        title: "Question "+qno+"<span style='color:red;'>*</span>",
+                        "completeText": "SUBMIT",
+                        "pageNextText": "Next Page",
+                        "pagePrevText": "Previous",                    
+                        questions: [
+                            {
+                                type: "radiogroup",
+                                name: questionId,
+                                title: title,
+                                isRequired: true,
+                                colCount: 1,
+                                defaultValue:selectedans,
+                                choices: options
+                            }                                       
+                        ],                                                                                     
+                        completedHtml: ' '
+                    };  
+                    
+                    sendCurrentQuestionId(questionId);                                                              
+                    survey = new Survey.Survey(json);
+                    survey.onComplete.add(function (result) { 
+                        $("#surveyElement").html("");
+                        $("#surveyResult").html('<div class="container" style="color:red;"><img style="position:absolute;top:50%;left:50%;margin:-50px 0px 0px -50px;" id="loading-image" width="100" height="100" src="images/loading.gif" /></div>');                
+                        var modifiedData = Object.keys(result.data).map(function(questionId) {
+                            return {
+                                token :tokenUrl,
+                                licenseKey :licenseKeyUrl,
+                                key: {
+                                    id: questionId,
+                                    answer: result.data[questionId]
+                                }                                
+                            }
+                        });                      
+                        submitData(JSON.stringify(modifiedData[0]));                                        
+                    });  
+                                                                
+                    //Create showdown mardown converter
+                    var converter = new showdown.Converter();
+                    survey.onTextMarkdown.add(function (survey, options) {
+                        //convert the mardown text to html
+                        var str = converter.makeHtml(options.text);
+                        //remove root paragraphs <p></p>
+                        str = str.substring(3);
+                        str = str.substring(0, str.length - 4);
+                        //set html
+                        options.html = str;
+                    });                    
+                    survey.onUpdateQuestionCssClasses.add(function (survey, options) {
+                        var classes = options.cssClasses
+                        classes.root = "sq-root";
+                        classes.title = "sq-title";
+                        classes.item = "sq-item";
+                        classes.label = "sq-label";
+                        if (options.question.isRequired) {
+                            classes.title = "sq-title sq-title-required";
+                            classes.root = "sq-root sq-root-required";
+                        }
+                        if (options.question.getType() === "checkbox") {
+                            classes.root = "sq-root sq-root-cb";
+                        }
+                    });                            
+                    $("#surveyElement").Survey({model:survey});//, onCurrentPageChanged: doOnCurrentPageChanged                    
+                    prev = JSON.stringify(next_load.data.prevnext.previous).replace (/"/g,'');
+                    next = JSON.stringify(next_load.data.prevnext.next).replace (/"/g,'');
+                    text = "prev";
+                    
+                    if(prev!==""){
+                        $(".sv_header>h3>span").before('<a type="button" class="sv_prev_btn"><span class="glyphicon glyphicon-chevron-left" onclick="submitPrevious(survey,prev,questionId)"></span></a>');                    
+                    }if(qno!==noOfQuestions){
+                        datanext="next";                        
+                        if(next){                            
+                            $(".sv_header>h3>span").after('<a type="button" class="sv_next_btn"><span class="glyphicon glyphicon-chevron-right" onclick="submitNext(survey,next,questionId)"></span></a>');
+                        }else{                           
+                            $(".sv_header>h3>span").after('<a type="button" class="sv_next_btn"><span class="glyphicon glyphicon-chevron-right" onclick="survey.completeLastPage()"></span></a>');
+                        }                        
+                    }                  
+                    $(".sv_main .sv_container").append("<p class='qno'>"+qno+"/"+noOfQuestions+"</p>");                    
+                } 
+            }
+            function submitPrevious(survey1,previous,question){
+                surveyPre = new Survey.Survey(json);
+                val = survey1.getValue(question);
+                data={"token":tokenUrl,"licenseKey":licenseKeyUrl,"questionId":previous,"key":{"id":question,"answer":val}};
+                if(survey1.currentPage.hasErrors()==false){
+                    submitData(JSON.stringify(data));
+                }
+            }
+
+            function submitNext(survey1,next,question){
+                surveyPre = new Survey.Survey(json);
+                val = survey1.getValue(question);                
+                data={"token":tokenUrl,"licenseKey":licenseKeyUrl,"questionId":next,"key":{"id":question,"answer":val}};
+                if(survey1.currentPage.hasErrors()==false){
+                    submitData(JSON.stringify(data));
+                }
+                                                       
+            }
+
+            function submitData(form_data) {   
+                $.ajax({                    
+                    type:"POST",
+                    data:form_data,
+                    url: "http://ec2-35-154-172-174.ap-south-1.compute.amazonaws.com:3003/api/submit-assessment-one-question",//submitUrl,
+                    crossDomain:true,
+                    contentType: "application/json",
+                    dataType:"json",
+                    error:function (request, status, error) {
+                        $("#surveyElement").html("");   
+                        $("#surveyResult").html("");
+                        errorMsg = "Server Unreachable";
+                        $("#surveyElement").html("<div class='alert alert-danger connectionMsg text-center'><h3>Server Unreachable</h3><br/><a style='float:left;' onclick='sendErrorResponse(errorMsg);'>Go Back</a><button style='float:right;' onclick='location.reload(true);'>Try again</button></div>");                                                                                        
+                                                                                              
+                    },                                       
+                    success:function (data) {
+                        var code = JSON.stringify(data.message);
+                        if(JSON.stringify(data.code).indexOf('1')> -1 ){
+                            $("#surveyElement").html("");$("#surveyResult").html("");
+                            errorMsg=JSON.stringify(data.message);
+                            $("#surveyElement").html("<div class='alert alert-danger text-center'><h1>"+JSON.stringify(data.message).replace (/"/g,'')+"</h1><a style='float:left;' onclick='sendErrorResponse(errorMsg);'>Go Back</a></div>");                        
+                        }else if(JSON.stringify(data.code).indexOf('0') > -1 && JSON.stringify(data.info).indexOf('0') > -1 ){//JSON.stringify(data.info).indexOf('0') > -1 ){                                                       
+                            var toastmsg="Submission successful";
+                            sendSubmitAssessmentResponse(toastmsg, JSON.stringify(data));
+                            //$("#surveyElement").html("");$("#surveyResult").html("");
+                            //$("#surveyElement").html('<img width="100" height="100" tyle="position: absolute;top: 50%;left: 50%;margin: -50px 0px 0px -50px;" id="loading-image" images/progress_settings.gif" />');
+                           // $("#surveyElement").html("<div class='alert alert-success text-center'><h1>Thanks for Submission</h1></div>");                                                        
+                        }else if(JSON.stringify(data.code).indexOf('1')> -1 && JSON.stringify(data.info).indexOf('1') > -1  ){
+                            $("#surveyElement").html("");
+                            errorMsg=JSON.stringify(data.message);
+                            $("#surveyElement").html("<div class='alert alert-danger text-center'><h1>"+JSON.stringify(data.message).replace (/"/g,'')+"</h1><a style='float:left;' onclick='sendErrorResponse(errorMsg);' >Go Back</a></div>");                        
+                        }else{
+                            next = JSON.stringify(data.data.prevnext.next).replace (/"/g,'');
+                            previous = JSON.stringify(data.data.prevnext.previous).replace (/"/g,'');
+                            getData(data);                                                                                
+                        }                        
+                    },
+                });
+            }
+            
+            function status(){
+                if(navigator.onLine){
+                    return "1";
+                }else{
+                    return "0";
+                }
+            } 
+
+            function sendCurrentQuestionId(questionId){
+                if(typeof Android !== "undefined" && Android !== null) {
+                    Android.currentQuestionId(questionId)
+                } else {
+                    console.log("Not viewing in webview");
+                }
+            }
+
+            function sendErrorResponse(errorMsg){
+                if(typeof Android !== "undefined" && Android !== null) {
+                    Android.onError(errorMsg)
+                } else {
+                    console.log("Not viewing in webview");
+                }
+            }
+            
+            function sendSubmitAssessmentResponse(toastmsg, data){
+                if(typeof Android !== "undefined" && Android !== null) {
+                    Android.getSubmitAssessmentResponse(toastmsg, data)
+                }else {
+                    sessionStorage.setItem("data",data);
+                    window.location.href="/summary.html";
+                    console.log("Not viewing in webview");
+                }
+            }
+
+            function displaySummary(data){
+                var jsonData = JSON.parse(data);
+                $("#surveyElement").html("");
+                $("#surveyResult").html("");
+                var avgScore = jsonData.data.avgScore;
+                
+                var skillsLength=Object.keys(jsonData.data.axisScore.skills).length;  
+                var skill = jsonData.data.axisScore.skills;
+                $("#surveyResult").html("<br/>"+
+                        "<div class='alert alert-success text-center'>Thanks for Submission</div>"
+                        +"<div class='container' id='result'>"
+                            +"<div id='avgScoreDiv' class='text-center'>YOUR SCORE : "+avgScore+" </div>"  
+                            +"<div id='summaryDiv'><h3 id='divHeader'>Summary</h3>"
+                                +"<table><thead><th></th><th></th></thead><tbody id='skillsAndScore'></tbody></table>"
+                            +"</div>"  
+                        +"</div>"               
+                );
+                var skillsAndScore="";
+                for(i = 0; i < skillsLength; i++){
+                    var label =jsonData.data.axisScore.skills[i].label;
+                    var score =jsonData.data.axisScore.skills[i].score;                    
+                    skillsAndScore +="<tr><td>"+label+"</td><td>"+score+"</td></tr>";
+                }
+                $("#skillsAndScore").append(skillsAndScore);
+            }
+
+            function moveToPreviousQuestion(){
+                $('#serveyResult').html("Android Method Calling");
+            }
+           // moveToPreviousQuestion();
+
+            function getUrlVars(){
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for(var i = 0; i < hashes.length; i++){
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+        </script>      
+    </body>
+    </html>

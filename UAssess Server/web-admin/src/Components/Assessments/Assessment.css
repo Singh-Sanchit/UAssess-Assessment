@@ -1,0 +1,387 @@
+#logoImg{
+    width:100%;
+    height:100%;
+}
+
+#contentDiv{
+    padding: 2%;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+#assessmentDiv{
+    background-color: white;
+    box-shadow: 0 0 0.8rem grey;
+    width: 85%;
+    text-align: center;
+    margin-left: 1.5rem;
+}
+#header{
+    font-size:2.0rem;
+    color:#333232;
+    line-height: 2.3rem;
+    /* height: 5rem;       */
+    overflow: hidden;
+
+}
+#date,#date:hover,#assScoreDiv, #assScoreDiv:hover{
+    color: #333232;
+    font-size: 1.3rem;
+}
+#hr{
+    border: 0.1rem solid grey;
+}
+
+#userIcon{
+    color: green;
+}
+#starIcon{
+    color:#ff5733;
+}
+#questionIcon{
+    color:#ffaf33
+}
+#createAssessmentBut{
+    background-color: #2680aa;
+    border :#2680aa;
+    width:100%;
+    margin-top: 1.3rem;
+    float: right;
+    height: 4.3rem;
+    border-radius: 0.2rem;
+}
+#createAssessmentBut {
+    color: white;
+    font-size: 1.7rem;
+}
+#searchAssessments{
+    margin-top: 13px;
+    padding: 2.1rem;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+}
+#tabRow{
+    margin-left: 1%;
+}
+
+.box-shadow{
+    box-shadow: 0rem 0.1rem 0.3rem grey;
+    padding: 0.5rem;
+    margin-bottom: 20px;
+}
+.font-size{
+    font-size: 1.2rem;
+}
+hr{
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+.no-padding{
+    padding:0;
+}
+.user-icon{
+    color:green;
+}
+.box-footer-row{
+    padding: 0.8rem 0rem;
+    margin: 0px;
+}
+.box-header-row{
+    padding-bottom: 1rem;
+}
+.box-footer-col, .box-header-col{
+    margin-bottom: 0px;
+    color: #333232;
+}
+.box-header-title{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 2rem;
+    color:#333232;;
+}
+.fa-clock-o{
+    color: rgb(212, 110, 110);
+}
+.box-header-expiry-date{
+    color: #27576d;    
+}
+.box-header-company-logo{
+    width :100%;
+    height :100%;
+}
+.fa-pause-circle{
+    color: red;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -30px;
+    font-size: 24px !important;
+}
+.modal-header .close {
+    margin-top: -2px;
+}
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: none !important;
+} 
+
+.bg-pink{
+    color: #ffff;
+    background: #D68AB7 !important;
+}
+.bg-green{
+    background: #69D3BF !important;
+}
+.bg-yellow{
+    background: #F1BA63 !important;
+}
+
+
+
+
+.info-tags{
+    margin-top: 3%;
+}
+.info-tags-fa-size{
+    font-size: 70px;
+}
+
+/* Progress Bar */
+.progress-bar-div a,.progress-bar-div span,.progress-bar-div div{
+    line-height: 31px !important;
+    font-size: 1.3rem !important;
+}
+
+/* Create Assessment */
+
+.white-bg-grey-border{
+    background: #ffff;
+    /* border: 1px solid grey; */
+    box-shadow: 0 0 0.8rem grey;
+}
+.nav-tabs {
+    border-bottom: 0 !important;
+    margin-left: 27% !important;
+}
+.nav-tabs a h3{
+    cursor: pointer;
+}
+.nav-link.active {
+    border-bottom:1px solid lightgray;
+}
+.padding-5rem{
+    padding: 5rem;
+}
+.tab-content{
+    padding-top: 3rem !important;
+}
+.grey-bg{
+    background:#FBFBFB;
+}
+.use-btn{
+    width: 9rem;
+    background: #009BFC !important;
+    border:none;
+}
+.padding-top-3rem{
+    padding-top: 3rem;
+}
+.padding--3{
+    padding: 0rem 3rem 4rem 5rem;
+}
+.loading-icon-ass{
+    left: 50%;
+    top: 60%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    font-size: 5rem;
+}
+.loading-icon{
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+#templateImg{
+    width: 100%;
+    height: 8rem;
+}
+.box-header-title-tem{
+    
+    color: #333232cc;
+    position: absolute;
+    bottom: 8px;
+    right: -7px;
+    /* background-color: black; */
+    /* color: white; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Assessment Form */
+
+.assessment-form-label{
+    font-size: 1.7rem;
+} 
+.col-no-padding{
+    padding: 1.5rem;
+}
+.padding-3{
+    padding: 0rem 6rem 7rem 7rem;
+}
+.assessment-form{
+    padding: 1rem;
+}
+.assessment-form input[type="text"]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-top: 1rem;
+}
+.assessment-form input[type="number"]{
+    /* width:10rem; */
+    padding-top: 1rem;
+}
+/* .assessment-form #time{
+    margin-left: -14px;
+}
+.assessment-form h5{
+    margin-left: -25px;
+} */
+
+.minutes-div{
+    margin-top: 5rem !important;
+}
+.assessment-form input[type=number]::-webkit-inner-spin-button, 
+.assessment-form input[type=number]::-webkit-outer-spin-button, 
+.assessment-questions-div input[type=number]::-webkit-inner-spin-button,
+.assessment-questions-div input[type=number]::-webkit-outer-spin-button
+{  
+   opacity: 1;
+}
+
+.assessment-form label{
+    padding-left: 0px !important;  
+}
+.rounded-btn-left{
+    border-radius:50%;
+    margin-right:1.5rem;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background: #009BFC;
+    border: none;
+    color: white;
+}
+.rounded-btn-right{
+    border-radius:50%;
+    margin-right:5rem;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background: #009BFC;
+    border: none;
+}
+.rounded-btn-left a,.rounded-btn-right a{
+    color:white;
+}
+.margin-bottom-5rem{
+    margin-bottom: 5rem;
+}
+#btnNext{
+    width: 9rem;
+    background: #009BFC;
+    border: none;
+    margin-right: 3rem;
+}
+.react-switch{
+    height: 2.3rem !important;
+}
+/* .assessment-questions-div label,.security-questions-div label{
+    font-size: 1.7rem;
+} */
+.div-title{
+    color: #009BFC;
+}
+.row-top-padding{
+    margin-top: 2rem;
+}
+#activateAssessment h4{
+    padding: 3rem;
+}
+#activateAssessment{
+    padding: 15rem !important;
+}
+.fa-check-circle{
+    font-size: 7rem !important;
+    color: rgb(0, 128, 117);
+}
+.padding-5rem-top{
+    padding: 5rem;
+}
+.padding-left-3rem{
+    /* padding-left: 3rem; */
+    display: grid;
+}
+#uploadedFrontCover{
+    width: 50%;
+}
+.alert-success{
+    background-color: #d4edda !important;
+    color: #155724 !important;
+    border-color: #d4edda !important;
+}
+.alert-warning{
+    background-color: #f8d7da !important;
+    color:  #721c24!important;
+    border-color: #f8d7da !important;
+}
+@media (max-width: 991px){
+    .box-header-company-logo{
+        width :20%;
+        height :20%;
+    }
+    #getTest{
+        width:100%;
+        margin-top:1rem;
+    }
+    .padding-5rem{
+        padding: 0rem;
+    }
+    /* Assessment Form */
+    .padding-3{
+        padding: 0rem 1rem 1rem 1rem;
+    }
+    .assessment-form{
+        padding: 1rem;
+    }
+    #activateAssessment{
+        padding: 0rem !important;
+    }
+    .nav-tabs {
+        border-bottom: 0 !important;
+        margin-left: 0 !important;
+    }
+    .no-padding-left-right{
+        position: relative;
+        min-height: 1px;
+        padding-right: 0px !important; 
+        padding-left: 0px !important;
+    }
+}

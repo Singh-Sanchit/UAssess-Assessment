@@ -1,0 +1,71 @@
+.login-container__form-label{
+    text-align: left;
+    padding: 0;
+}
+
+.login-container__button{
+    float: left;
+    padding: 0.3rem 3rem;
+}
+.login-container__create-acc{
+    float: left;
+    padding: 1rem 0rem;
+    font-size: 15px;
+    font-weight: 600 !important;
+}
+.logo{
+    height: 8rem;
+    margin-bottom: 23%;
+}
+.singin-title{
+    padding-bottom: 2rem;
+}
+.login-title{
+    color:white;
+    padding-bottom: 5rem;
+    font-family:Impact, Charcoal, sans-serif;
+    letter-spacing: 3px;
+}
+.login-container{
+    background: rgb(60, 141, 188);
+    background: -moz-linear-gradient(top, rgb(60, 141, 188) 0%, rgb(60, 141, 188) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(60, 141, 188)), color-stop(50%, rgb(60, 141, 188)), color-stop(50%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgb(60, 141, 188) 0%, rgb(60, 141, 188) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgb(60, 141, 188) 0%, rgb(60, 141, 188) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgb(60, 141, 188) 0%, rgb(60, 141, 188) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgb(60, 141, 188) 0%, rgb(60, 141, 188) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+@media (max-width: 991px){
+    .login-container__form-label {
+        /* text-align: left; */
+        float: left;
+        padding: 0;
+    }
+    .login-container__button {
+      /* float: center; */
+      padding: 0.3rem 3rem;
+    }
+    .login-container__create-acc{
+        float: left;
+        padding: 1rem 0rem;
+        font-size: 15px;
+        font-weight: 600 !important;
+    }
+    .login-container__form-container {
+        background-color: white;
+        border-radius: 0.437rem;
+        text-align: center;
+        line-height: 1.5rem;
+        box-shadow: 0rem 0.1rem 0.3rem grey;
+        padding-left: 2rem;
+        padding-bottom: 2.75rem;
+        padding-right: 2rem;
+        padding-top: 3rem;
+      }
+      .login-title{
+        color:white;
+        /* padding-bottom: 7rem; */
+        font-family:Impact, Charcoal, sans-serif;
+        letter-spacing: 3px;
+    }
+}
